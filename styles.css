@@ -1,0 +1,136 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+    font-size: 14px;
+}
+figure {
+    margin: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(23%, 1fr));
+    grid-gap: 20px;
+    grid-auto-rows: 270px;
+    width: 98%;
+    margin: 7px auto;
+}
+.to-top-anchor {
+    display: block;
+    background: url(https://i.postimg.cc/Jndv2HtZ/to-top.png) no-repeat;
+    width: 41px;
+    height: 41px;
+    margin: 0 auto;
+    position: sticky;
+    bottom: 20px;
+    z-index: 3;
+    transition: all 300ms ease-out;
+}
+.to-top-anchor:hover {
+    bottom: 40px;
+}
+.card {
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0px rgba(34, 60, 80, 0.2);
+    position: relative;
+}
+.card__avatar {
+    width: 80%;
+    height: calc(100% - 60px);
+    position: absolute;
+    left: 10%;
+    top: -2%;
+    border-radius: 5px;
+    box-shadow: 0px 16px 20px 0px rgba(34, 60, 80, 0.3);
+    display: inline-block;
+    object-fit: cover;
+}
+.card__caption {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    width: 70%;
+    font-weight: bold;
+    text-align: center;
+}
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.8);
+}
+.modal {
+    display: none;
+    width: 90%;
+    height: 500px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+.open {
+    display: block;
+}
+.close {
+    display: none;
+}
+.modal__info {
+    width: 40%;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+    grid-gap: 2%;
+    grid-auto-rows: min-content;
+    font-size: 12px;
+}
+.modal__avatar {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 15px 0 0 15px;
+    background-blend-mode: overlay;
+}
+.modal__caption {
+    font-weight: bold;
+}
+.load {
+    position: fixed;
+    width: 90px;
+    z-index: 75;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+@media all and (max-width: 840px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        grid-gap: 20px;
+    }
+}
+@media all and (max-width: 580px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+        grid-gap: 20px;
+    }
+}
+@media all and (max-width: 430px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        grid-gap: 20px;
+    }
+}
